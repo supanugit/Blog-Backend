@@ -33,7 +33,7 @@ const userSchema = new mongoose.Schema(
   }
 );
 
-userSchema.index({ email: 1 });
+// userSchema.index({ email: 1 });
 
 // Create model
 export const User = mongoose.model("User", userSchema);

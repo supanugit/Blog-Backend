@@ -7,9 +7,9 @@ export const authLimiter = rateLimit({
   message: "Too many requests, please try again later.",
   standardHeaders: true,
   legacyHeaders: false,
-  onLimitReached: (req, res, options) => {
-    console.warn(`Rate limit exceeded for IP: ${req.ip}`);
-  },
+  // handler: (req, res, options) => {
+  //   console.warn(`Rate limit exceeded for IP: ${req.ip}`);
+  // },
 });
 
 export const writeLimiter = rateLimit({
