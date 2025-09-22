@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Create Blog Post</title>
+  </head>
+  <body>
+    <h2>Create a Blog Post</h2>
+
+    <form
+      action="http://localhost:3000/"
+      method="POST"
+      enctype="multipart/form-data">
+      <!-- Title -->
+      <label for="title">Title:</label><br />
+      <input type="text" id="title" name="title" required /><br /><br />
+
+      <!-- Description -->
+      <label for="description">Description:</label><br />
+      <textarea
+        id="description"
+        name="description"
+        rows="5"
+        cols="30"
+        required></textarea
+      ><br /><br />
+
+      <!-- Image Upload -->
+      <label for="image">Upload Image:</label><br />
+      <input
+        type="file"
+        id="image"
+        name="image"
+        accept="image/*"
+        required /><br /><br />
+
+      <button type="submit">Create Post</button>
+    </form>
+  </body>
+</html>
