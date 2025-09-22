@@ -80,11 +80,9 @@ router.post("/login", authLimiter, async (req, res) => {
     );
     res.cookie("token", jwt_Token, {
       httpOnly: true,
-      sameSite: "strict",
-      secure: false,
-
-      //1h
-      maxAge: 1 * 60 * 60 * 1000,
+      sameSite: process.env.NODE_ENV === "production" ? "none" : "strict",
+      secure: process.env.NODE_ENV === "production",
+      maxAge: 1 * 60 * 60 * 1000, // 1 hour
     });
     return successResponse(res, "Login successful", 200);
   } catch (error) {
